@@ -1,20 +1,25 @@
+import React, { useState } from 'react';
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import HomeScreen from './components/Home';
+import SignInScreen from './components/auth/SignInScreen';
+import NewUser from './components/auth/SignUp';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+   
+  const [authState, authChange] = useState(false);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NewUser />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  
 });
