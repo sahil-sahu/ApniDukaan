@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 
-function NewUser(){
+function NewUser({ navigation }){
 
     return(
         <View style={styles.newUser}>
@@ -40,9 +41,9 @@ function NewUser(){
                 </View>
                 <TextInput style={styles.Box}/>
             </View>
-            <View>
-                <Pressable android_ripple={{opacity: '.5', borderless: true}}>
-                    <Image style={styles.nexticon} source={require('../../assets/logo-alt.png')} />
+            <View style={styles.nextButt}>
+                <Pressable android_ripple={{opacity: '.5', borderless: true}} onPress={() => navigation.navigate('Form2')}>
+                    <AntDesign name="rightcircleo" size={48} color="#FFC886" />
                 </Pressable>
             </View>
         </View>
@@ -52,7 +53,7 @@ function NewUser(){
 
 const styles = StyleSheet.create({
     newUser:{
-        // backgroundColor:"#000",
+        backgroundColor:"#fff",
         flex:1,
         width:'100%',
         alignItems:'center',
@@ -125,6 +126,14 @@ const styles = StyleSheet.create({
         borderRadius:5,
         margin:25,
 
+    },
+    nextButt:{
+        marginTop: '5%',
+        overflow: 'hidden',
+        width:'100%',
+        justifyContent:'flex-end',
+        flexDirection:'row',
+        paddingRight:'20%'
     },
 })
 

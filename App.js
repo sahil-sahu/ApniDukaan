@@ -5,10 +5,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import HomeScreen from './components/Home';
 import SignInScreen from './components/auth/SignInScreen';
-import NewUser from './components/auth/SignUp';
-
+import MainScreen from './screens/Main';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -16,7 +14,16 @@ export default function App() {
   const [authState, authChange] = useState(false);
 
   return (
-    <NewUser />
+    <NavigationContainer>
+    <Stack.Navigator>
+      {authState ? 
+        <Stack.Screen name="Home" component={MainScreen} />
+       : <Stack.Screen name="Auth" component={SignInScreen} initialParams={{ pageChanger: authChange }}
+        />}
+
+
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 

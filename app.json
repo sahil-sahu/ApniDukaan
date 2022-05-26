@@ -28,6 +28,16 @@
     },
     "web": {
       "favicon": "./assets/icon.png"
-    }
+    },
+    "plugins": [
+          [
+            "expo-image-picker",
+            {
+              "photosPermission": "The app accesses gallery to have a better picture your shop.",
+              "cameraPermission": "The app accesses camera to have a better picture your shop."
+            }
+          ]
+        ]
+    
   }
 }

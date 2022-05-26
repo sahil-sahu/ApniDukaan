@@ -18,7 +18,7 @@ function SignInScreen({ route }){
             </View>
             <View style={styles.signUpform} >
                 <View style={styles.phoneContainer}>
-                    <TextInput style={styles.phone} keyboardType={'phone-pad'} placeholder="XXXXX-XXXXX" maxLength={10}/>
+                    <TextInput style={styles.phone} keyboardType={'phone-pad'} placeholder="XXXXX-XXXXX" maxLength={13}/>
                 </View>
                <View style={{...styles.otpButton,overflow:'hidden', height: 60,}}>
                     
