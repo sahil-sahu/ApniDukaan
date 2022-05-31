@@ -13,18 +13,10 @@ export default function App() {
    
   const [authState, authChange] = useState(false);
 
-  return (
-    <NavigationContainer>
-    <Stack.Navigator>
-      {authState ? 
-        <Stack.Screen name="Home" component={MainScreen} />
-       : <Stack.Screen name="Auth" component={SignInScreen} initialParams={{ pageChanger: authChange }}
-        />}
-
-
-    </Stack.Navigator>
-  </NavigationContainer>
-  );
+  return (<>
+    {(authState? <MainScreen /> : <SignInScreen state={authChange}/>)}
+    </>
+  )
 }
 
 const styles = StyleSheet.create({

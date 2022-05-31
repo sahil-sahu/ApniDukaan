@@ -1,11 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
 
 function HomeScreen(){
 
     return(
         <View style={styles.hero}>
-            <Text>Home Screen Bro!</Text>
+            <Image style={styles.logo} source={require('../assets/body.png')} />
         </View>
     )
 
@@ -18,5 +17,10 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: "center",
+    },
+    logo:{
+        width:'100%',
+        // height: '100%',
+        transform: [{translateY: 60}]
     }
 })

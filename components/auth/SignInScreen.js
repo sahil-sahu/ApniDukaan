@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
 
-function SignInScreen({ route }){
+function SignInScreen(props){
     
     function gotoHome(){
-        const { pageChanger } = route.params;
+        const pageChanger = props.state;
         pageChanger(true);
       }
 

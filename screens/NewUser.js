@@ -14,7 +14,6 @@ const Stack = createNativeStackNavigator();
 export default ProfileEdit = () => {
    
   return (
-    <NavigationContainer independent={true} >
     <Stack.Navigator 
     screenOptions={{
       headerShown: false,
@@ -28,7 +27,6 @@ export default ProfileEdit = () => {
 
 
     </Stack.Navigator>
-  </NavigationContainer>
   );
 };
 
