@@ -1,11 +1,16 @@
-import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable, TextInput, ScrollView } from 'react-native';
+import Header from './header';
+import Featured from './Main/Featured';
+import Offer from './Main/Offer';
 
 function HomeScreen(){
 
     return(
-        <View style={styles.hero}>
-            <Image style={styles.logo} source={require('../assets/body.png')} />
-        </View>
+        <ScrollView style={styles.hero}>
+            <Header></Header>
+            <Featured />
+            <Offer />
+        </ScrollView>
     )
 
 }
@@ -15,8 +20,10 @@ export default HomeScreen;
 const styles = StyleSheet.create({
     hero:{
         flex:1,
-        justifyContent: 'center',
-        alignItems: "center",
+        // justifyContent: 'center',
+        // alignItems: "center",
+        // padding:20,
+        backgroundColor:`#fff`,
     },
     logo:{
         width:'100%',
