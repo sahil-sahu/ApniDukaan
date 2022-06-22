@@ -60,9 +60,9 @@ const Offer = props => {
           containerStyle={styles.imageContainer}
           style={styles.image}
         />
-        <Text style={styles.title} numberOfLines={2}>
+        {/* <Text style={styles.title} numberOfLines={2}>
           {item.title}
-        </Text>
+        </Text> */}
       </View>
     );
   };

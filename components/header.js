@@ -1,7 +1,10 @@
 import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
+import { useState } from 'react';
 
 export default function Header(){
+
+    const [typeOrder, setType] = useState('takeaway');
 
     return(
         <View style={styles.header}>
@@ -24,14 +27,14 @@ export default function Header(){
                 <MaterialIcons style={styles.icon} name="keyboard-voice" size={24} color="#FFC886" />
             </View>
             <View style={styles.toggle}>
-                <Pressable style={[styles.box, styles.active]}>
+                <Pressable onPress={() => setType('takeaway')} style={[styles.box, typeOrder=='takeaway'? styles.active : null]}>
                     <View>
-                        <Text style={[styles.boxText, styles.activeText]}>TAKEAWAY</Text>
+                        <Text style={[styles.boxText, typeOrder=='takeaway'? styles.activeText : null]}>TAKEAWAY</Text>
                     </View>
                 </Pressable>    
-                <Pressable style={styles.box}>    
+                <Pressable onPress={() => setType('delivery')} style={[styles.box, typeOrder=='delivery'? styles.active : null]}>    
                     <View>
-                        <Text style={[styles.boxText]} >DELIVERY</Text>
+                        <Text style={[styles.boxText, typeOrder=='delivery'? styles.activeText : null]}>DELIVERY</Text>
                     </View>
                 </Pressable>
             </View>

@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, Image, Pressable, TextInput, ScrollView } from 
 import Header from './header';
 import Featured from './Main/Featured';
 import Offer from './Main/Offer';
+import Nearby from './Main/Nearby';
+import ShopBy from './Main/ShopByCat';
 
 function HomeScreen(){
 
@@ -10,6 +12,8 @@ function HomeScreen(){
             <Header></Header>
             <Featured />
             <Offer />
+            <Nearby />
+            <ShopBy />
         </ScrollView>
     )
 
