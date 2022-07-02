@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 
 export default ItemInfo = () => {
 
-    const [Quantity, setQuantity] = useState(230);
+    const [Quantity, setQuantity] = useState(['2','3','0']);
     const [inputQuantity, setInputQuantity] = useState('');
 
 
@@ -28,11 +28,14 @@ export default ItemInfo = () => {
                 </View>
                 <TextInput style={styles.Box} keyboardType={'phone-pad'} 
                     value={inputQuantity} 
-                    onChange={text => setInputQuantity(text)}
+                    onChangeText={setInputQuantity}
                     />
             </View>
             <View style={styles.nextButt}>
-                <Pressable android_ripple={{opacity: '.5', borderless: true}} onPress={() => setQuantity(inputQuantity)}>
+                <Pressable android_ripple={{opacity: '.5', borderless: true}} onPress={() => {
+                    setQuantity(inputQuantity);
+                    setInputQuantity(null);
+                    }}>
                     <AntDesign name="rightcircleo" size={48} color="#FFC886" />
                 </Pressable>
             </View>

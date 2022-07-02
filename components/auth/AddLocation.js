@@ -18,11 +18,13 @@ export default AddLocation = () => {
     };
 
     return(
-        <Pressable onPress={getLocation} style={styles.LocoConatiner}>
-                <Text>
+        <View style={styles.LocoConatiner}>
+            <Pressable style={styles.button} onPress={getLocation} >
+                <Text style={styles.buttonText}>
                     Add Location
                 </Text>
-        </Pressable>
+            </Pressable>
+        </View>
     )
 };
 
@@ -31,5 +33,17 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: "center",
+    },
+    button:{
+        padding:15,
+        paddingHorizontal:25,
+        backgroundColor:"#FFC886",
+        borderRadius:10,
+        // width:100,
+        justifyContent:"center",
+        height:60,
+    },
+    buttonText:{
+        fontSize:18,
     },
 }); 
